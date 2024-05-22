@@ -24,4 +24,15 @@ variable "admin_password" {
 variable "subscription_id" {}
 variable "tenant_id" {}
 variable "client_id" {}
-variable "client_secret" {}   
+variable "client_secret" {}
+
+variable "admin_object_id" {
+  description = "The object ID of service principal"
+  type        = string
+  sensitive   = true
+}
+
+variable "key_vault_name" {
+  description = "The name of the Azure Key Vault"
+  type        = string
+}

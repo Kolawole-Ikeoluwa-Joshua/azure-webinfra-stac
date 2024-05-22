@@ -44,3 +44,12 @@ module "sql_database" {
   admin_username      = var.admin_username
   admin_password      = var.admin_password
 }
+
+module "key_vault" {
+  source              = "./key_vault"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  tenant_id           = var.tenant_id
+  admin_object_id     = var.admin_object_id
+  key_vault_name      = var.key_vault_name
+}
