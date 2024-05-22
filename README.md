@@ -125,5 +125,5 @@ Refer to Azure documentation for detailed configuration options of each resource
 
 ## 5. References
 
-Terraform Azure Provider Documentation
-Terraform Documentation
+- [Terraform Azure Provider Documentation](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
