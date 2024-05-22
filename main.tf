@@ -53,3 +53,11 @@ module "key_vault" {
   admin_object_id     = var.admin_object_id
   key_vault_name      = var.key_vault_name
 }
+
+module "backup" {
+  source              = "./backup"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  web_tier_vm_ids     = module.vms.web_tier_vm_ids
+  db_tier_vm_id       = module.vms.db_tier_vm_id
+}

@@ -106,8 +106,6 @@ terraform plan
 Apply the configuration to Azure:
 
 ```
-terraform apply
-
 terraform apply -var-file="terraform.tfvars"
 ```
 
