@@ -2,41 +2,50 @@
 
 ```
 .
-├── README.md                  # Deployment instructions and reference
-├── backend.tf                 # Terraform Cloud backend configuration (optional)
-├── main.tf                   # Main Terraform configuration referencing modules
-├── modules
-│   ├── key_vault              # Module for Azure Key Vault (optional)
-│   │   ├── key_vault.tf        # Key Vault resource configuration
-│   │   └── variables.tf       # Key Vault specific variables (optional)
-│   ├── lb                      # Module for Azure Load Balancer (optional)
-│   │   ├── lb.tf                # Load Balancer resource configuration
-│   │   └── variables.tf       # Load Balancer specific variables (optional)
-│   ├── app_gateway            # Module for Azure Application Gateway (optional)
-│   │   ├── app_gateway.tf      # Application Gateway resource configuration
-│   │   └── variables.tf       # Application Gateway specific variables (optional)
-│   ├── backup                  # Module for Azure Backup (optional)
-│   │   ├── backup.tf            # Backup schedule resources
-│   │   └── variables.tf       # Backup specific variables (optional)
-│   ├── security_center        # Module for Azure Security Center (optional)
-│   │   ├── security_center.tf  # Security Center workspace configuration
-│   │   └── variables.tf       # Security Center specific variables (optional)
-│   ├── vnet                    # Module for Virtual Network and Subnets
-│   │   ├── vnet.tf              # Virtual Network and Subnet resources
-│   │   └── variables.tf       # Network configuration variables
-│   ├── nsg                    # Module for Network Security Groups
-│   │   ├── nsg.tf               # Network Security Group resources
-│   │   └── variables.tf       # Network Security Group variables
-│   ├── availability_set       # Module for Availability Set
-│   │   ├── availability_set.tf  # Availability Set resource
-│   │   └── variables.tf       # Availability Set variables
-│   └── vm                      # Module for Virtual Machines
-│       ├── db_vm.tf             # Database VM resource configuration
-│       ├── vms.tf               # Web VM resource configuration
-│       └── variables.tf       # VM configuration variables
-├── providers.tf                # Azure provider configuration
-├── variables.tf               # Global variables for deployment
-└── outputs.tf                 # Outputs for deployed resources (optional)
+├── .gitignore
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars
+├── backend.tf
+├── providers.tf
+├── vnet
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── nsg
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── vms
+│   ├── main.tf
+│   ├── network_interfaces.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── load_balancer
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── app_gateway
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── sql_database
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── key_vault
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── backup
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+├── security_center
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
 
 
 ```
