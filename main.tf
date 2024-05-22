@@ -29,3 +29,10 @@ module "load_balancer" {
   location            = var.location
   resource_group_name = var.resource_group_name
 }
+
+module "app_gateway" {
+  source              = "./app_gateway"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  web_tier_subnet_id  = module.vnet.web_tier_subnet_id
+}
