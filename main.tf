@@ -36,3 +36,11 @@ module "app_gateway" {
   resource_group_name = var.resource_group_name
   web_tier_subnet_id  = module.vnet.web_tier_subnet_id
 }
+
+module "sql_database" {
+  source              = "./sql_database"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  admin_username      = var.admin_username
+  admin_password      = var.admin_password
+}
