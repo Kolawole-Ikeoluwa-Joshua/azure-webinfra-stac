@@ -61,3 +61,7 @@ module "backup" {
   web_tier_vm_ids     = module.vms.web_tier_vm_ids
   db_tier_vm_id       = module.vms.db_tier_vm_id
 }
+
+module "security_center" {
+  source = "./security_center"
+}
