@@ -52,6 +52,10 @@
 
 
 ## 1. Prerequisites
+- Terraform installed on your local machine.
+- An Azure account with appropriate permissions to create resources.
+- Terraform Cloud to manage state and locking
+- Access to a text editor to modify Terraform configuration files.
 
 ```
 # set up backends.tf
@@ -80,6 +84,8 @@ subscription_id = ""
 tenant_id       = ""
 client_id       = ""
 client_secret   = ""
+admin_object_id = ""
+key_vault_name  = ""
 
 ```
 
@@ -100,6 +106,8 @@ terraform init
 Review the planned changes:
 
 ```
+terraform validate
+
 terraform plan
 ```
 
@@ -117,5 +125,5 @@ Refer to Azure documentation for detailed configuration options of each resource
 
 ## 5. References
 
-https://developer.hashicorp.com/terraform/tutorials/azure-get-started
-Remember to update variable names and resource configurations based on your specific implementation.
+Terraform Azure Provider Documentation
+Terraform Documentation
