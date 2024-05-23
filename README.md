@@ -86,6 +86,12 @@ client_id       = ""
 client_secret   = ""
 admin_object_id = ""
 key_vault_name  = ""
+workspace1_name                = ""
+workspace1_resource_group_name = ""
+workspace2_name                = ""
+workspace2_resource_group_name = ""
+security_center_contact_email  = ""
+security_center_contact_phone  = ""
 
 ```
 
@@ -120,7 +126,7 @@ terraform apply -var-file="terraform.tfvars"
 ## 4. Additional Notes
 
 This deployment creates a basic web application infrastructure.
-Modify the code for specific needs (e.g., scaling web VMs).
+Modify the code for specific needs (e.g., scaling web VMs, etc).
 Refer to Azure documentation for detailed configuration options of each resource.
 
 ## 5. References

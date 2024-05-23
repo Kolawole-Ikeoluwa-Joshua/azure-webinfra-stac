@@ -43,3 +43,7 @@ output "key_vault_id" {
 output "recovery_vault_id" {
   value = module.backup.recovery_vault_id
 }
+
+output "security_center_admin_emails" {
+  value = module.security_center.security_center_admin_emails
+}

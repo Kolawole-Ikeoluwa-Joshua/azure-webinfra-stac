@@ -62,6 +62,38 @@ module "backup" {
   db_tier_vm_id       = module.vms.db_tier_vm_id
 }
 
+###################
+# security center #
+###################
+
+resource "azurerm_log_analytics_workspace" "workspace1" {
+  name                = var.workspace1_name
+  location            = var.location
+  resource_group_name = var.workspace1_resource_group_name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+}
+
+resource "azurerm_log_analytics_workspace" "workspace2" {
+  name                = var.workspace2_name
+  location            = var.location
+  resource_group_name = var.workspace2_resource_group_name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+}
+
 module "security_center" {
   source = "./security_center"
+
+  workspace1_id    = azurerm_log_analytics_workspace.workspace1.id
+  workspace1_scope = "/subscriptions/${var.subscription_id}"
+
+  workspace2_id    = azurerm_log_analytics_workspace.workspace2.id
+  workspace2_scope = "/subscriptions/${var.subscription_id}/resourceGroups/${var.workspace2_resource_group_name}"
+
+  security_center_contact_email       = var.security_center_contact_email
+  security_center_contact_phone       = var.security_center_contact_phone
+  security_center_pricing_tier        = var.security_center_pricing_tier
+  security_center_alert_notifications = var.security_center_alert_notifications
+  security_center_alerts_to_admins    = var.security_center_alerts_to_admins
 }
