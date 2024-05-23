@@ -7,7 +7,7 @@ resource "azurerm_security_center_contact" "contact" {
   alerts_to_admins    = var.security_center_alerts_to_admins
 }
 
-resource "azurerm_security_center_subscription_pricing" "example" {
+resource "azurerm_security_center_subscription_pricing" "vtl-sub" {
   tier = var.security_center_pricing_tier
 
 }
